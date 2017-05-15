@@ -84,6 +84,9 @@ class CheckoutViewController: UIViewController {
                 cartViewController.AppleWatchQuantity.text = "0"
                 cartViewController.AppleTVQuantity.text = "0"
                 cartViewController.CartTotalLabel.text = "$0"
+                cartViewController.iPadProStepperOutlet.value = 0
+                cartViewController.AppleWatchStepperOutlet.value = 0
+                cartViewController.AppleTVStepperOutlet.value = 0
             }
         }
     }

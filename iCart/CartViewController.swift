@@ -29,6 +29,11 @@ class CartViewController: UIViewController {
     var AppleWatchCost = 299
     var AppleTVCost = 199
     
+    @IBOutlet weak var iPadProStepperOutlet: UIStepper!
+    @IBOutlet weak var AppleWatchStepperOutlet: UIStepper!
+    @IBOutlet weak var AppleTVStepperOutlet: UIStepper!
+    
+    
     @IBOutlet weak var CheckoutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +43,11 @@ class CartViewController: UIViewController {
         iWatchImage.layer.cornerRadius = 5
         iWatchImage.clipsToBounds = true
         iTVImage.layer.cornerRadius = 5
-        
         iTVImage.clipsToBounds = true
+        
         iPadProQuantity.text = "0"
         AppleWatchQuantity.text = "0"
         AppleTVQuantity.text = "0"
-        
-        
         
         iPadProCostLabel.text = "$\(iPadProCost)"
         AppleWatchCostLabel.text = "$\(AppleWatchCost)"

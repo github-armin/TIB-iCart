@@ -200,13 +200,16 @@
                     <connections>
                         <outlet property="AppleTVCostLabel" destination="oJa-a1-Zu7" id="xdp-h2-Gaw"/>
                         <outlet property="AppleTVQuantity" destination="ZRE-3k-zHJ" id="aLm-CR-0Zk"/>
+                        <outlet property="AppleTVStepperOutlet" destination="fra-Dv-c6v" id="K6L-ee-JYc"/>
                         <outlet property="AppleWatchCostLabel" destination="Scd-8w-xXu" id="cfa-il-Zrg"/>
                         <outlet property="AppleWatchQuantity" destination="kfm-WH-V5L" id="SQK-nK-TE6"/>
+                        <outlet property="AppleWatchStepperOutlet" destination="aHb-hW-fG8" id="xjW-67-cZM"/>
                         <outlet property="CartTotalLabel" destination="Vu1-kU-zAz" id="S0y-z4-Yds"/>
                         <outlet property="CheckoutButton" destination="0kC-gu-Gar" id="Myw-aF-bEY"/>
                         <outlet property="iPadImage" destination="Ykm-4G-h73" id="3kc-cM-QKb"/>
                         <outlet property="iPadProCostLabel" destination="Ajw-A8-tGM" id="GkV-Oi-P0Z"/>
                         <outlet property="iPadProQuantity" destination="JNG-gQ-rfC" id="0CH-9p-yJy"/>
+                        <outlet property="iPadProStepperOutlet" destination="Q5I-Iy-Pvj" id="L4h-cN-Aqr"/>
                         <outlet property="iTVImage" destination="gre-0q-gGd" id="xUh-pO-lHe"/>
                         <outlet property="iWatchImage" destination="irb-qY-hbB" id="cwP-ib-ZOf"/>
                         <segue destination="X78-u7-hDb" kind="show" identifier="ShowCheckout" id="mUf-st-MN0"/>
