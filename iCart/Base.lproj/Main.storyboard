@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cart-->
+        <!--Apple Products-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CartViewController" customModule="iCart" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,6 +143,9 @@
                                 <state key="normal" title="Checkout →">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="CheckoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KGP-aQ-zjH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the items you want to purchase and its quantity. Total price includes tax." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbr-0k-htY">
                                 <rect key="frame" x="8" y="562" width="359" height="43"/>
@@ -191,32 +194,130 @@
                             <constraint firstAttribute="trailing" secondItem="irb-qY-hbB" secondAttribute="trailing" constant="8" id="zkq-sI-Y9L"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cart" id="jzH-Cc-iHh"/>
+                    <navigationItem key="navigationItem" title="Apple Products" id="jzH-Cc-iHh">
+                        <barButtonItem key="backBarButtonItem" title=" " id="wus-l8-0DM"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="AppleTVCostLabel" destination="oJa-a1-Zu7" id="xdp-h2-Gaw"/>
                         <outlet property="AppleTVQuantity" destination="ZRE-3k-zHJ" id="aLm-CR-0Zk"/>
                         <outlet property="AppleWatchCostLabel" destination="Scd-8w-xXu" id="cfa-il-Zrg"/>
                         <outlet property="AppleWatchQuantity" destination="kfm-WH-V5L" id="SQK-nK-TE6"/>
                         <outlet property="CartTotalLabel" destination="Vu1-kU-zAz" id="S0y-z4-Yds"/>
+                        <outlet property="CheckoutButton" destination="0kC-gu-Gar" id="Myw-aF-bEY"/>
                         <outlet property="iPadImage" destination="Ykm-4G-h73" id="3kc-cM-QKb"/>
                         <outlet property="iPadProCostLabel" destination="Ajw-A8-tGM" id="GkV-Oi-P0Z"/>
                         <outlet property="iPadProQuantity" destination="JNG-gQ-rfC" id="0CH-9p-yJy"/>
                         <outlet property="iTVImage" destination="gre-0q-gGd" id="xUh-pO-lHe"/>
                         <outlet property="iWatchImage" destination="irb-qY-hbB" id="cwP-ib-ZOf"/>
+                        <segue destination="X78-u7-hDb" kind="show" identifier="ShowCheckout" id="mUf-st-MN0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1469.5999999999999" y="228.93553223388307"/>
         </scene>
+        <!--Checkout View Controller-->
+        <scene sceneID="FQH-tQ-xpD">
+            <objects>
+                <viewController id="X78-u7-hDb" customClass="CheckoutViewController" customModule="iCart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jlm-11-spD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pm2-f4-aU9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oxn-b9-7hu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_total" translatesAutoresizingMaskIntoConstraints="NO" id="mTd-zl-1p1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtF-ew-1wH">
+                                <rect key="frame" x="77" y="149" width="221" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(total includes tax)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2x-7w-XkV">
+                                <rect key="frame" x="116" y="196" width="143" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lql-K2-Rna">
+                                <rect key="frame" x="0.0" y="613" width="375" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Place Order">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="PlaceOrderTapped:" destination="X78-u7-hDb" eventType="touchUpInside" id="Y6Y-bq-QMa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWo-mp-954">
+                                <rect key="frame" x="66" y="409" width="96" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon_standard"/>
+                                <connections>
+                                    <action selector="StandardShippingTapped:" destination="X78-u7-hDb" eventType="touchUpInside" id="H04-2k-eXa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcw-H1-hx3">
+                                <rect key="frame" x="215" y="409" width="96" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon_express"/>
+                                <connections>
+                                    <action selector="ExpressShippingTapped:" destination="X78-u7-hDb" eventType="touchUpInside" id="hp7-gZ-plX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YJ-IK-ws5">
+                                <rect key="frame" x="249" y="513" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Free" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="me6-De-JRe">
+                                <rect key="frame" x="97" y="512" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WtF-ew-1wH" firstAttribute="top" secondItem="jlm-11-spD" secondAttribute="bottom" constant="85" id="C5n-2P-Ilf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d2x-7w-XkV" secondAttribute="trailing" constant="100" id="IER-3v-DZf"/>
+                            <constraint firstItem="d2x-7w-XkV" firstAttribute="leading" secondItem="Oxn-b9-7hu" secondAttribute="leadingMargin" constant="100" id="QDX-Kw-aMi"/>
+                            <constraint firstItem="WtF-ew-1wH" firstAttribute="leading" secondItem="Oxn-b9-7hu" secondAttribute="leadingMargin" constant="61" id="jVB-o6-CUi"/>
+                            <constraint firstItem="d2x-7w-XkV" firstAttribute="top" secondItem="WtF-ew-1wH" secondAttribute="bottom" constant="15" id="mgF-Ov-SYf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WtF-ew-1wH" secondAttribute="trailing" constant="61" id="x5m-1C-ZT2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CartTotalLabel" destination="WtF-ew-1wH" id="8J1-hD-A5o"/>
+                        <outlet property="ExpressShippingButton" destination="qcw-H1-hx3" id="UvN-AW-T1H"/>
+                        <outlet property="ExpressShippingCostLabel" destination="8YJ-IK-ws5" id="dc8-xl-I5n"/>
+                        <outlet property="StandardShippingButton" destination="hWo-mp-954" id="b8O-tE-zk6"/>
+                        <segue destination="WCG-No-txk" kind="unwind" identifier="unwindToCart" unwindAction="unwindToCartWithSegue:" id="H7a-4d-FLj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RUu-zN-FpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WCG-No-txk" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2412" y="228.93553223388307"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qb4-h0-SxO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tyE-fq-XEY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEj-Sg-dOn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gEj-Sg-dOn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -233,7 +334,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_express" width="96" height="96"/>
+        <image name="icon_standard" width="96" height="96"/>
         <image name="img_ipad" width="343" height="130"/>
+        <image name="img_total" width="343" height="183"/>
         <image name="img_tv" width="343" height="130"/>
         <image name="img_watch" width="343" height="130"/>
     </resources>

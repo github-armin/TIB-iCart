@@ -29,6 +29,7 @@ class CartViewController: UIViewController {
     var AppleWatchCost = 299
     var AppleTVCost = 199
     
+    @IBOutlet weak var CheckoutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -50,29 +51,58 @@ class CartViewController: UIViewController {
         AppleTVCostLabel.text = "$\(AppleTVCost)"
         
         CartTotalLabel.text = "$0"
+        
+        CheckoutButton.isEnabled = false
     }
 
     func CalcTotal() {
         CartTotal = (Int(iPadProQuantity.text!)! * iPadProCost) + (Int(AppleWatchQuantity.text!)! * AppleWatchCost) + (Int(AppleTVQuantity.text!)! * AppleTVCost)
         CartTotalLabel.text = "$\(CartTotal)"
     }
+    
+    func CheckoutButtonStatus () {
+        if (CartTotal > 0) {
+            CheckoutButton.isEnabled = true
+        }
+        else {
+            CheckoutButton.isEnabled = false
+        }
+    }
     @IBAction func iPadProStepper(_ sender: UIStepper) {
         iPadProQuantity.text = Int(sender.value).description
         CalcTotal()
+        CheckoutButtonStatus()
         
     }
     @IBAction func AppleWatchStepper(_ sender: UIStepper) {
         AppleWatchQuantity.text = Int(sender.value).description
         CalcTotal()
+        CheckoutButtonStatus()
     }
     @IBAction func AppleTVStepper(_ sender: UIStepper) {
         AppleTVQuantity.text = Int(sender.value).description
         CalcTotal()
+        CheckoutButtonStatus()
     }
     
+    @IBAction func CheckoutButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: StoryBoard.ShowCheckout, sender: nil)
+    }
     
+    @IBAction func unwindToCart(segue: UIStoryboardSegue) {}
     
+    struct StoryBoard {
+        static let ShowCheckout = "ShowCheckout"
+    }
     
-    
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == StoryBoard.ShowCheckout) {
+            if let checkoutViewController = segue.destination as? CheckoutViewController {
+                checkoutViewController.cartTotal = self.CartTotal
+                checkoutViewController.QuantityiPadPro = Int(self.AppleTVQuantity.text!)
+                checkoutViewController.QuantityAppleWatch = Int(self.AppleWatchQuantity.text!)
+                checkoutViewController.QuantityAppleTV = Int(self.AppleTVQuantity.text!)
+            }
+        }
+    }
 }

@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C677C15F1EC6F7DB00AE4F52 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C15E1EC6F7DB00AE4F52 /* CartViewController.swift */; };
+		C677C1611EC8FF6F00AE4F52 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C1601EC8FF6F00AE4F52 /* CheckoutViewController.swift */; };
 		C6FACC611EC65C6700519E06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FACC601EC65C6700519E06 /* AppDelegate.swift */; };
-		C6FACC631EC65C6700519E06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FACC621EC65C6700519E06 /* ViewController.swift */; };
 		C6FACC661EC65C6700519E06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6FACC641EC65C6700519E06 /* Main.storyboard */; };
 		C6FACC681EC65C6700519E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6FACC671EC65C6700519E06 /* Assets.xcassets */; };
 		C6FACC6B1EC65C6700519E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6FACC691EC65C6700519E06 /* LaunchScreen.storyboard */; };
@@ -17,9 +17,9 @@
 
 /* Begin PBXFileReference section */
 		C677C15E1EC6F7DB00AE4F52 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		C677C1601EC8FF6F00AE4F52 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		C6FACC5D1EC65C6700519E06 /* iCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FACC601EC65C6700519E06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C6FACC621EC65C6700519E06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C6FACC651EC65C6700519E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6FACC671EC65C6700519E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6FACC6A1EC65C6700519E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				C6FACC601EC65C6700519E06 /* AppDelegate.swift */,
-				C6FACC621EC65C6700519E06 /* ViewController.swift */,
+				C677C1601EC8FF6F00AE4F52 /* CheckoutViewController.swift */,
 				C6FACC641EC65C6700519E06 /* Main.storyboard */,
 				C677C15E1EC6F7DB00AE4F52 /* CartViewController.swift */,
 				C6FACC671EC65C6700519E06 /* Assets.xcassets */,
@@ -140,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6FACC631EC65C6700519E06 /* ViewController.swift in Sources */,
+				C677C1611EC8FF6F00AE4F52 /* CheckoutViewController.swift in Sources */,
 				C677C15F1EC6F7DB00AE4F52 /* CartViewController.swift in Sources */,
 				C6FACC611EC65C6700519E06 /* AppDelegate.swift in Sources */,
 			);
