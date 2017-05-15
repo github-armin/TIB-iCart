@@ -87,6 +87,7 @@ class CheckoutViewController: UIViewController {
                 cartViewController.iPadProStepperOutlet.value = 0
                 cartViewController.AppleWatchStepperOutlet.value = 0
                 cartViewController.AppleTVStepperOutlet.value = 0
+                cartViewController.CheckoutButton.isEnabled = false
             }
         }
     }
